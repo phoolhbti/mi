@@ -1,0 +1,155 @@
+<ui:composition template="/WEB-INF/templates/settings-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:define name="settings-content">
+
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/rpgm/faces/home/myHome.xhtml">Home</a> <span class="divider"></span>
+                    </li>
+                    <li>
+                        <a href="/rpgm/faces/settings/settingsHome.xhtml">Settings</a> <span class="divider"></span>
+                    </li>
+                    <li>
+                        <a href="#">Modules by Grade</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <!--Add new exam Button-->
+                <a href="/rpgm/faces/settings/settingsSubjectModules.xhtml">
+                    <Button class="btn btn-default">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Subjectwise View
+                    </Button>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <ul class="thumbnails">
+                <!--Listof Subjects-->
+                <!--TODO: get list from db-->
+                <li class="thumbnail col-md-9" style="margin-bottom: 5px">
+
+                    <div class="accordion col-md-12" id="accordion10">
+                        <div class="accordion-group">
+                            <div class="col-md-8">
+                                Grade 10
+                            </div>
+                            <a class="accordion-toggle col-md-4" data-toggle="collapse" data-parent="#accordion10"
+                               href="#collapse10">
+                                <button class="btn btn-large pull-right">View Modules</button>
+                            </a>
+
+                            <div id="collapse10" class="accordion-body collapse">
+                                <div class="accordion-inner">
+
+                                    <div class="thumbnail col-md-12" style="margin-top: 5px; margin-bottom: 0px">
+                                        <div class="col-md-2">
+                                            Science
+                                        </div>
+                                        <div class="col-md-4">
+                                            Science and Technology
+                                        </div>
+                                        <div class="col-md-2">
+                                            Compulsury
+                                        </div>
+                                    </div>
+
+                                    <div class="thumbnail col-md-12" style="margin-top: 5px; margin-bottom: 0px">
+                                        <div class="col-md-2">
+                                            Mathematics
+                                        </div>
+                                        <div class="col-md-4">
+                                            Basic Mathematics
+                                        </div>
+                                        <div class="col-md-2">
+                                            Compulsury
+                                        </div>
+
+                                    </div>
+
+                                    <div class="thumbnail col-md-12" style="margin-top: 5px; margin-bottom: 0px">
+                                        <div class="col-md-2">
+                                            Tamil
+                                        </div>
+                                        <div class="col-md-4">
+                                            Tamil Language
+                                        </div>
+                                        <div class="col-md-2">
+                                            Compulsury
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="thumbnail col-md-9" style="margin-bottom: 5px">
+
+                    <div class="accordion col-md-12" id="accordion11">
+                        <div class="accordion-group">
+                            <div class="col-md-8">
+                                Grade 11
+                            </div>
+                            <a class="accordion-toggle col-md-4" data-toggle="collapse" data-parent="#accordion11"
+                               href="#collapse11">
+                                <button class="btn btn-large pull-right">View Modules</button>
+                            </a>
+
+                            <div id="collapse11" class="accordion-body collapse">
+                                <div class="accordion-inner">
+
+                                    <div class="thumbnail col-md-12" style="margin-top: 5px; margin-bottom: 0px">
+                                        <div class="col-md-2">
+                                            Science
+                                        </div>
+                                        <div class="col-md-4">
+                                            Anvance Science
+                                        </div>
+                                        <div class="col-md-2">
+                                            compulsury
+                                        </div>
+                                    </div>
+
+                                    <div class="thumbnail col-md-12" style="margin-top: 5px; margin-bottom: 0px">
+                                        <div class="col-md-2">
+                                            Mathematics
+                                        </div>
+                                        <div class="col-md-4">
+                                            Applied Mathematics
+                                        </div>
+                                        <div class="col-md-2">
+                                            Compulsury
+                                        </div>
+                                    </div>
+
+                                    <div class="thumbnail col-md-12" style="margin-top: 5px; margin-bottom: 0px">
+                                        <div class="col-md-2">
+                                            Tamil
+                                        </div>
+                                        <div class="col-md-4">
+                                            Tamil Litrature
+                                        </div>
+                                        <div class="col-md-2">
+                                            Compulsury
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ui:define>
+
+</ui:composition>

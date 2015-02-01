@@ -1,0 +1,71 @@
+<ui:composition template="/WEB-INF/templates/settings-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:define name="settings-content">
+
+        <div class="col-md-8">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/rpgm/faces/home/myHome.xhtml">Home</a> <span class="divider"></span>
+                </li>
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-10">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="/rpgm/faces/settings/settingsGradesDivisions.xhtml">
+                            <img src="/rpgm/ico/arrangements.png" alt="mrpgm" align="center" style="min-height:50px;height:50px;"/>
+
+                            <div class="caption">
+                                <h5 align="center">Grades &amp; Divisions</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="/rpgm/faces/settings/settingsSubjectModules.xhtml">
+                            <img src="/rpgm/ico/student.png" alt="mrpgm" align="center" style="min-height:50px;height:50px;"/>
+
+                            <div class="caption">
+                                <h5 align="center">Subjects &amp; Modules</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a href="#">
+                        <img src="/rpgm/ico/staff.png" alt="mrpgm" align="center" style="min-height:50px;height:50px;"/>
+
+                        <div class="caption">
+                            <h5 align="center">User Accounts</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a href="#">
+                        <img src="/rpgm/ico/staff.png" alt="mrpgm" align="center" style="min-height:50px;height:50px;"/>
+
+                        <div class="caption">
+                            <h5 align="center">rpgm Updates</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

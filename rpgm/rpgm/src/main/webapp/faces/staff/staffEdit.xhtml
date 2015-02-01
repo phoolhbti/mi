@@ -1,0 +1,101 @@
+<ui:composition template="/WEB-INF/templates/staff-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:define name="yhead">
+        
+        <title>
+            #{staffEditBean.staff.name}
+        </title>
+    </ui:define>
+    <ui:define name="staff-content">
+
+        <div class="col-md-6">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/rpgm/faces/home/myHome.xhtml">Home</a>
+                </li>
+                <li class="active">
+                    Staffs
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-md-4">
+            <!--Add new student Button-->
+            <a href="/rpgm/faces/staff/staffNew.xhtml">
+                <Button class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add New Staff
+                </Button>
+            </a>
+        </div>
+
+        <div class="col-md-10">
+            <div class="row" id="staff-home-contents">
+
+
+                <div class="col-md-3">
+                    <div>
+                        <img src="/rpgm/ico/student.png" class="img-circle"></img>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Staff ID</label>
+
+                            <div class="col-md-8">
+                                <h:inputText type="text" id="inputID" value="#{staffEditBean.staff.staffid}"
+                                             class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label control-label col-md-4">Name</label>
+
+                            <div class="col-md-8">
+                                <h:inputText type="text" id="inputName" value="#{staffEditBean.staff.name}"
+                                             class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label control-label col-md-4">Full Name</label>
+
+                            <div class="col-md-8">
+                                <h:inputText type="text" id="inputFullName" value="#{staffEditBean.staff.fullName}"
+                                             class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset4">
+                                <h:form>
+                                    <h:commandButton class="btn btn-default" value="Back"
+                                                     type="submit"
+                                                     action="#{staffEditBean.backToViewStaff}">
+
+                                    </h:commandButton>
+                                    <h:commandButton class="btn btn-default" value="Update"
+                                                     type="submit"
+                                                     action="#{staffEditBean.updateStaff}">
+
+                                    </h:commandButton>
+                                </h:form>
+                                <h:commandButton value="Delete" action="#" type="submit" styleClass="btn btn-default"/>
+
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

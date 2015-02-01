@@ -1,0 +1,154 @@
+<ui:composition template="/WEB-INF/templates/student-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:t="http://myfaces.apache.org/tomahawk"
+        >
+    <ui:define name="yhead">
+        <title>
+            Add New Student
+        </title>
+    </ui:define>
+
+    <ui:define name="student-content">
+
+        <div class="col-md-8">
+            <!--Breadcrumb to help user "where you are?"-->
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/rpgm/faces/home/myHome.xhtml">Home</a>
+                </li>
+                <li>
+                    <a href="/rpgm/faces/student/studentHome.xhtml">Students</a>
+                </li>
+                <li class="active">
+                    Add New Student
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-md-4">
+            <!--Add new student Button-->
+            <a href="/rpgm/faces/student/studentNew.xhtml">
+                <Button class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add New Student
+                </Button>
+            </a>
+        </div>
+
+        <div class="col-md-10">
+
+            <h:form class="form-horizontal col-md-8" enctype="multipart/form-data">
+
+                <fieldset>
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="Admision-No">Admision No.</label>
+
+                        <div class="col-md-8">
+                            <h:inputText id="Admision-No" value="#{studentNewBean.admission_No}" required="true"
+                                         requiredMessage="Admision No is required" class="form-control">
+                            </h:inputText>
+                            <p:watermark for="Admision-No" value="Admision No."/>
+                            <h:message for="Admision-No" errorStyle="color : red"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="name">Name</label>
+
+                        <div class="col-md-8">
+                            <h:inputText id="name" value="#{studentNewBean.name}" required="true"
+                                         requiredMessage="Name is required" class="form-control">
+                            </h:inputText>
+                            <p:watermark for="name" value="Name"/>
+                            <h:message for="name" errorStyle="color : red"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="fullName">Full Name</label>
+
+                        <div class="col-md-8">
+                            <h:inputText id="fullName" value="#{studentNewBean.fullname}" required="true"
+                                         requiredMessage="Full Name is required" class="form-control">
+                            </h:inputText>
+                            <p:watermark for="fullName" value="Full Name"/>
+                            <h:message for="fullName" errorStyle="color : red"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="nameWithInitial">Initial</label>
+
+                        <div class="col-md-8">
+                            <h:inputText id="initial" value="#{studentNewBean.name_wt_initial}" required="true"
+                                         requiredMessage="Initial is required" class="form-control">
+                            </h:inputText>
+                            <p:watermark for="initial" value="Initial"/>
+                            <h:message for="initial" errorStyle="color : red"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="popupCal">Date Of Birth</label>
+
+                        <div class="col-md-8">
+                            <p:calendar value="#{studentNewBean.dob}" id="popupCal"
+                                        requiredMessage="Select a Date"/>
+                            <p:message for="popupCal" errorStyle="color : red"/>
+
+                            <p:watermark for="popupCal" value="Date of Birth"/>
+                            <h:message for="popupCal" errorStyle="color : red"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="gender">Gender</label>
+
+                        <div class="col-md-8">
+                            <h:selectOneMenu id="gender" class="form-control"
+                                             value="#{studentNewBean.gender}">
+                                <f:selectItem id="male" itemLabel="Male" itemValue="Male"/>
+                                <f:selectItem id="female" itemLabel="Female" itemValue="Female"/>
+                            </h:selectOneMenu>
+                            <h:message for="gender" errorStyle="color : red"/>
+                        </div>
+                    </div>
+					<div class="form-group">
+						<label class="control-label col-md-4" for="photo">Photo</label>
+						<div class="col-md-8">
+							  <t:inputFileUpload  id="photo" value="#{studentNewBean.photo}" required="false">
+                                </t:inputFileUpload>
+                                <p:watermark for="photo" value="Photo"/>
+                                <h:message for="photo" errorStyle="color : red"/>               
+						</div>
+					</div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="Address">Address</label>
+
+                        <div class="col-md-8">
+                            <h:inputText id="Address" value="#{studentNewBean.address}" required="true"
+                                         requiredMessage="Address is required" class="form-control">
+                            </h:inputText>
+                            <p:watermark for="Address" value="Address"/>
+                            <h:message for="Address" errorStyle="color : red"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class=" col-md-offset-4">
+                        <h:commandButton value="Clear All" type="reset"
+                                         class="btn btn-default"/>
+
+                        <h:commandButton type="submit" value="Add This Student"
+                                         action="#{studentNewBean.addStudent}"
+                                         class="btn btn-default"/>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>

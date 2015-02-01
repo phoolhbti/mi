@@ -1,0 +1,45 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+        <!--<ui:fragment rendered="{not examinationNewBean.selectedGrade eq null}">-->
+        <fieldset>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="subject">Module</label>
+
+                <div class="col-md-8">
+                    <h:selectOneMenu id="subject" class="form-control"
+                                     value="#{examinationNewBean.moduleid}" required="true"
+                                     requiredMessage="Module is required">
+                        <f:selectItems value="#{examinationNewBean.availableModules}" var="module"
+                                       itemLabel="#{module.subjectIdsubject.subjectName}"
+                                       itemValue="#{module.id}"></f:selectItems>
+                    </h:selectOneMenu>
+                    <h:message for="subject" errorStyle="color : red"/>
+                </div>
+            </div>
+        </fieldset>
+        <!--</ui:fragment>-->
+
+
+
+    <fieldset>
+        <div class="form-group">
+            <div class="col-md-offset-4">
+
+                <a href="/rpgm/faces/examination/examinationHome.xhtml" class="btn btn-default">
+                    Cancel
+                </a>
+
+                <h:commandButton value="Reset All" type="reset" class="btn btn-default"/>
+
+                <h:commandButton type="submit" value="Add this Term Exam" action="#{examinationNewBean.addTermExam}"
+                                 class="btn btn-default"/>
+            </div>
+        </div>
+    </fieldset>
+
+</ui:composition>

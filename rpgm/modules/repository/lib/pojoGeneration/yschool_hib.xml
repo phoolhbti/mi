@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<appconfig>
+
+ 	<dbType>MYSQL</dbType>
+	<driver>com.mysql.jdbc.Driver</driver>
+    <jdbcConnectionString>jdbc:mysql://127.0.0.1/yschool</jdbcConnectionString>
+	<databaseIP>localhost</databaseIP>
+    <databaseSchema>yschool</databaseSchema>
+	<databaseUsername>root</databaseUsername>
+	<databasePassword>root</databasePassword>
+    <!--add YOUR_PATH and remove comment bellow-->
+    <sourceTarget>D:\Projects\POJOJEN</sourceTarget>
+	<projectName>repository</projectName>
+	<topLevel>org.yarlithub.yschool</topLevel>
+	<libPath>libs</libPath>
+	<schemaStrategy>PARTIAL</schemaStrategy>
+
+<maven enabled="true" artifactId="yschool" groupId="org.yarlithub" version="1.0-SNAPSHOT" name="repository" packaging="jar">
+	
+   <dependencies>
+
+<![CDATA[
+	
+ 
+ 
+]]>
+	</dependencies>
+		
+	
+
+</maven>
+
+</appconfig>

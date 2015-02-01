@@ -1,0 +1,103 @@
+<ui:composition template="/WEB-INF/templates/settings-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:define name="settings-content">
+
+<div class="row">
+    <div class="col-md-8">
+        <ul class="breadcrumb">
+            <li>
+                <a href="/rpgm/faces/home/myHome.xhtml">Home</a> <span class="divider"></span>
+            </li>
+            <li>
+                <a href="/rpgm/faces/settings/settingsHome.xhtml">Settings</a> <span class="divider"></span>
+            </li>
+            <li>
+                <a href="#">Subjects and Modules</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <!--Add new exam Button-->
+        <a href="/rpgm/faces/settings/settingsGradeModules.xhtml">
+            <Button class="btn btn-default">
+                <span class="glyphicon glyphicon-plus"></span>
+                Gradewise View
+            </Button>
+        </a>
+    </div>
+</div>
+
+<div class="col-md-10">
+
+<!--Listof Subjects-->
+<div class="row" style="margin-bottom: 5px">
+    <h:form>
+        <a href="/rpgm/faces/examination/examinationNew.xhtml">
+
+            <h:commandLink type="button" class="btn  btn-default">
+                <i class="glyphicon glyphicon-plus"></i>Add New Subject
+                <!--<f:ajax render="exam-details"></f:ajax>-->
+            </h:commandLink>
+
+        </a>
+
+
+        <h:panelGroup id="inline-new-subject" layout="block">
+            <!--<ui:include src="{examinationNewBean.page}.xhtml"/>-->
+        </h:panelGroup>
+
+    </h:form>
+</div>
+<!--TODO: get list from db-->
+<div class="panel panel-default col-md-9" style="margin-bottom: 5px">
+	<ui:repeat var="subject" value="#{examinationNewBean.availableSubjects}" varStatus="status">
+    <div class="accordion col-md-12" id="accordionScience">
+        <div class="accordion-group">
+
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionScience"
+               href="#collapseScience">
+                <div class="panel-heading">
+                    #{subject.subjectCode}
+                </div>
+            </a>
+
+            <div id="collapseScience" class="accordion-body collapse">
+                <div class="accordion-inner">
+
+                    <div class="thumbnail col-md-12" style="margin-top: 5px; margin-bottom: 0px">
+                        <div class="col-md-2">
+                            Garde 9
+                        </div>
+                        <div class="col-md-4">
+                            Science and Technology
+                        </div>
+                        <div class="col-md-2">
+                            Optional
+                        </div>
+                        <div class="col-md-2">
+                            <Button class="btn btn-default pull-right">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                Edit
+                            </Button>
+                        </div>
+                        <div class="col-md-2">
+                            <Button class="btn btn-default pull-left">
+                                Remove
+                            </Button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	</ui:repeat>
+</div>
+
+</div>
+</ui:define>
+
+</ui:composition>

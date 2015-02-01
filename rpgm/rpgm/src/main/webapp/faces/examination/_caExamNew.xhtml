@@ -1,0 +1,58 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        >
+
+    <fieldset>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="division">Division</label>
+
+            <div class="col-md-8">
+                <h:selectOneMenu id="division" class="form-control"
+                                 value="#{examinationNewBean.divisionid}" required="true"
+                                 requiredMessage="Division is required">
+                    <f:selectItems value="#{examinationNewBean.availableDivisions}" var="division"
+                                   itemLabel="#{division.division}" itemValue="#{division.id}"></f:selectItems>
+                </h:selectOneMenu>
+                <h:message for="division" errorStyle="color : red"/>
+            </div>
+        </div>
+    </fieldset>
+
+
+        <fieldset>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="subject">Module</label>
+
+                <div class="col-md-8">
+                    <h:selectOneMenu id="subject" class="form-control"
+                                     value="#{examinationNewBean.moduleid}" required="true"
+                                     requiredMessage="Grade is required">
+                        <f:selectItems value="#{examinationNewBean.availableModules}" var="module"
+                                       itemLabel="#{module.subjectIdsubject.subjectName}"
+                                       itemValue="#{module.id}"></f:selectItems>
+                    </h:selectOneMenu>
+                    <h:message for="subject" errorStyle="color : red"/>
+                </div>
+            </div>
+        </fieldset>
+
+
+    <fieldset>
+        <div class="form-group">
+            <div class="col-md-offset-4">
+                <a href="/rpgm/faces/examination/examinationHome.xhtml" class="btn btn-default">
+                    Cancel
+                </a>
+                <h:commandButton value="Clear All" type="reset" class="btn btn-default"/>
+
+                <h:commandButton type="submit" value="Add this CA Exam" action="#{examinationNewBean.addCAExam}"
+                                 class="btn btn-default"/>
+
+            </div>
+        </div>
+    </fieldset>
+
+</ui:composition>

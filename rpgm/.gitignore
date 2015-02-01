@@ -1,0 +1,17 @@
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.log
+Thumbs.db
+*.iml
+*.idea
+*.classpath
+*.project
+*.settings/
+/yschool/target/
+/modules/*/target/
+/docs/ySchool.mwb.bak
+/docs/*.bak

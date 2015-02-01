@@ -1,0 +1,141 @@
+<ui:composition template="/WEB-INF/templates/student-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                 xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="yhead">
+        <title>
+            #{studentViewBean.student.fullName}
+        </title>
+    </ui:define>
+
+    <ui:define name="student-content">
+
+        <div class="col-md-8">
+            <!--Breadcrumb to help user "where you are?"-->
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/rpgm/faces/home/myHome.xhtml">Home</a>
+                </li>
+                <li>
+                    <a href="/rpgm/faces/student/studentHome.xhtml">Students</a>
+                </li>
+                <li>
+                    <a href="/rpgm/faces/student/studentList.xhtml">Students List</a>
+                </li>
+                <li class="active">
+                    View #{studentViewBean.student.fullName}
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-md-4">
+            <!--Add new student Button-->
+            <a href="/rpgm/faces/student/studentNew.xhtml">
+                <Button class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add New Student
+                </Button>
+            </a>
+        </div>
+        <!-- end student New -->
+
+        <div class="col-md-10">
+            <div class="row" id="student-home-contents">
+
+
+                <div class="col-md-3">
+                    <div>
+                            <p:graphicImage value="#{studentViewBean.dbImage}" alt="#{studentViewBean.student.fullName}" width="200px" height="215px"/>
+                        </div>
+                </div>
+
+                <div class="col-md-7">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">AdmissionNo:</label>
+
+                            <div class="col-md-8">
+                                <label class="control-label">#{studentViewBean.student.admissionNo}</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">StudentName:</label>
+
+                            <div class="col-md-8">
+                                <label class="control-label">#{studentViewBean.student.name}</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4">FullName</label>
+
+                            <div class="col-md-8">
+                                <label class="control-label">#{studentViewBean.student.fullName}</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">NameWithInitial</label>
+
+                            <div class="col-md-8">
+                                <label class="control-label">#{studentViewBean.student.nameWtInitial}</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Date Of Birth</label>
+
+                            <div class="col-md-8">
+                                <label class="control-label">#{studentViewBean.student.dob}</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Gender</label>
+
+                            <div class="col-md-8">
+                                <label class="control-label">#{studentViewBean.student.gender}</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Address</label>
+
+                            <div class="col-md-8">
+                                <label class="control-label">#{studentViewBean.student.address}</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class=" col-md-offset-4">
+
+                                <h:form>
+                                    <h:commandButton value="Back" action="#{studentViewBean.backTo}" type="submit"
+                                                     styleClass="btn btn-default">
+                                    </h:commandButton>
+
+
+                                    <h:commandButton value="Edit" action="#{studentViewBean.editStudent}" type="submit"
+                                                     styleClass="btn btn-default">
+                                    </h:commandButton>
+
+                                    <h:commandButton value="Delete" action="#{studentViewBean.studentDelete}"
+                                                     type="submit"
+                                                     styleClass="btn btn-default">
+                                    </h:commandButton>
+                                </h:form>
+
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

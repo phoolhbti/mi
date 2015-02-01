@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>messages.messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+        <el-resolver>
+            org.springframework.web.jsf.el.SpringBeanFacesELResolver
+        </el-resolver>
+    </application>
+
+    <!--Navigation-rules and managed-beans are handled by graphical navigation editing with intelliJ IDEA editor 12.1.4 commercial version
+Please don't edit it manually as it cause tracing page navigation more complex.-JayKrish
+-->
+
+    <!--index-->
+    <navigation-rule>
+        <description>from index page to first time rpgm setup page</description>
+        <display-name>index</display-name>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>setup</from-outcome>
+            <to-view-id>/faces/setup/setup.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/faces/home/myHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>        
+    </navigation-rule>
+	<navigation-rule>
+		<display-name>myHome</display-name>
+		<from-view-id>/faces/home/myHome.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+    <!--setup-->
+    <navigation-rule>
+        <display-name>setup</display-name>
+        <from-view-id>/faces/setup/setup.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/faces/home/myHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/faces/home/errorUnknown.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+
+    <!--########Student Navigation########-->
+    <!--studentHome-->
+    <navigation-rule>
+        <display-name>studentHome</display-name>
+        <from-view-id>/faces/student/studentHome.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>ViewStudentList</from-outcome>
+            <to-view-id>/faces/student/studentList.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>viewStudentAjax</from-outcome>
+            <to-view-id>/faces/student/searchStudent.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+    </navigation-rule>
+
+    <!--studentNew-->
+    <navigation-rule>
+        <display-name>studentNew</display-name>
+        <from-view-id>/faces/student/studentNew.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>AddStudentSuccess</from-outcome>
+            <to-view-id>/faces/student/studentHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>AddStudentFailed</from-outcome>
+            <to-view-id>/faces/student/studentNew.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <!--studentList-->
+    <navigation-rule>
+        <display-name>studentList</display-name>
+        <from-view-id>/faces/student/studentList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>viewStudent</from-outcome>
+            <to-view-id>/faces/student/studentView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <!--studentView-->
+    <navigation-rule>
+        <display-name>studentView</display-name>
+        <from-view-id>/faces/student/studentView.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>EditStudent</from-outcome>
+            <to-view-id>/faces/student/studentEdit.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>StudentHome</from-outcome>
+            <to-view-id>/faces/student/studentHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>backStudentList</from-outcome>
+            <to-view-id>/faces/student/studentList.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <!--studentEdit-->
+    <navigation-rule>
+        <display-name>studentEdit</display-name>
+        <from-view-id>/faces/student/studentEdit.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>editStudent</from-outcome>
+            <to-view-id>/faces/student/studentView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>backToView</from-outcome>
+            <to-view-id>/faces/student/studentView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+
+    </navigation-rule>
+
+
+    <!--studentSearch-->
+    <navigation-rule>
+        <display-name>studentSearch</display-name>
+        <from-view-id>/faces/student/searchStudent.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>backStudentHome</from-outcome>
+            <to-view-id>/faces/student/studentHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+
+
+    <!--########Staff Navigation########-->
+    <!--staffHome-->
+    <navigation-rule>
+        <display-name>staffHome</display-name>
+        <from-view-id>/faces/staff/staffHome.xhtml</from-view-id>       
+        <navigation-case>
+            <from-outcome>viewStaff</from-outcome>
+            <to-view-id>/faces/staff/staffView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+		
+         <navigation-case>
+            <from-outcome>ViewStaffList</from-outcome>
+            <to-view-id>/faces/staff/staffList.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>viewStaffAjax</from-outcome>
+            <to-view-id>/faces/staff/searchStaff.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+	 <!--staffList-->
+    <navigation-rule>
+        <display-name>staffList</display-name>
+        <from-view-id>/faces/staff/staffList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>viewStaff</from-outcome>
+            <to-view-id>/faces/staff/staffView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <!--staffNew-->
+    <navigation-rule>
+        <display-name>staffNew</display-name>
+        <from-view-id>/faces/staff/staffNew.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>AddStaffSuccess</from-outcome>
+            <to-view-id>/faces/staff/staffHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>AddStaffFailed</from-outcome>
+            <to-view-id>/faces/staff/staffNew.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+
+    <!--Staff Search-->
+    <navigation-rule>
+        <display-name>staffSearch</display-name>
+        <from-view-id>/faces/staff/searchStaff.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>viewStaffAjax</from-outcome>
+            <to-view-id>/faces/staff/staffSearch.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+	 <navigation-case>
+            <from-outcome>ViewStaffList</from-outcome>
+            <to-view-id>/faces/staff/staffList.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>viewStaffAjax</from-outcome>
+            <to-view-id>/faces/staff/searchStaff.xhtml</to-view-id>
+            <redirect/>
+       </navigation-case>
+    </navigation-rule>
+    <!--staffView-->
+    <navigation-rule>
+        <display-name>staffView</display-name>
+        <from-view-id>/faces/staff/staffView.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>EditStaff</from-outcome>
+            <to-view-id>/faces/staff/staffEdit.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>BackToHomeStaff</from-outcome>
+            <to-view-id>/faces/staff/staffHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>staffHome</from-outcome>
+            <to-view-id>/faces/staff/staffHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <!--staffEdit-->
+    <navigation-rule>
+        <display-name>staffEdit</display-name>
+        <from-view-id>/faces/staff/staffEdit.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>UpdateStaff</from-outcome>
+            <to-view-id>/faces/staff/staffView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>BackToViewStaff</from-outcome>
+            <to-view-id>/faces/staff/staffView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+
+    <!--########Examination Navigation########-->
+    <!--examinationNew-->
+    <navigation-rule>
+        <display-name>examinationNew</display-name>
+        <from-view-id>/faces/examination/examinationNew.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/faces/examination/examinationHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/faces/examination/examinationNew.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>NewTermExamSuccess</from-outcome>
+            <to-view-id>/faces/examination/examinationHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>NewTermExamFailure</from-outcome>
+            <to-view-id>/faces/examination/examinationNew.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <!--examinationHome-->
+    <navigation-rule>
+        <display-name>examinationHome</display-name>
+        <from-view-id>/faces/examination/examinationHome.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>examinationView</from-outcome>
+            <to-view-id>/faces/examination/examinationView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+	<!--ExaminationEdit-->
+    <navigation-rule>
+        <display-name>ExaminationEdit</display-name>
+        <from-view-id>/faces/examination/examinationView.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>ViewExam</from-outcome>
+            <to-view-id>/faces/examination/examinationView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>EditExam</from-outcome>
+            <to-view-id>/faces/examination/examinationEdit.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>AnalyticsSync</from-outcome>
+            <to-view-id>/faces/analytics/analyticsSync.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>CheckStandard</from-outcome>
+            <to-view-id>/faces/analytics/analyticsExaminationHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <!--########Analytics Navigation########-->
+    <navigation-rule>
+        <from-view-id>/faces/analytics/analyticsStudentRecommenderHome.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>StreamProfiles</from-outcome>
+            <to-view-id>/faces/analytics/analyticsStudentRecommenderStream.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/faces/analytics/analyticsSync.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>AnalyticsError</from-outcome>
+            <to-view-id>/faces/analytics/analyticsError.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/faces/analytics/analyticsHome.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>viewAnalyticsStudent</from-outcome>
+            <to-view-id>/faces/analytics/analyticsStudentHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>viewAnalyticsSearchResults</from-outcome>
+            <to-view-id>/faces/analytics/analyticsSearchResults.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/faces/analytics/analyticsSearchResults.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>viewAnalyticsStudent</from-outcome>
+            <to-view-id>/faces/analytics/analyticsStudentHome.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <!--########Classroom Navigation########-->
+    <!--classroomHome-->
+    <navigation-rule>
+        <from-view-id>/faces/classroom/classroomHome.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>editGrade</from-outcome>
+            <to-view-id>/faces/classroom/classroomGradeEdit.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>viewClassroom</from-outcome>
+            <to-view-id>/faces/classroom/classroomView.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>

@@ -1,0 +1,95 @@
+<ui:composition template="/WEB-INF/templates/staff-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+>
+
+    <ui:define name="yhead">
+        <title>Staff Home</title>
+
+    </ui:define>
+    <ui:define name="staff-content">
+
+        <div class="col-md-8">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/rpgm/faces/home/myHome.xhtml">Home</a>
+                </li>
+                <li class="active">
+                    <a href="#">Staffs</a>
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-md-4">
+            <!--Add new student Button-->
+            <a href="/rpgm/faces/staff/staffNew.xhtml">
+                <Button class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add New Staff
+                </Button>
+            </a>
+        </div>
+        <div class="col-md-8 col-lg-offset-2">
+                <p>Staff Search....</p>
+            <h:form>
+                <div class="form-group">
+                    <div class="col-md-7">
+                        <h:inputText id="staffName" value="#{staffHomeBean.searchKey}" class="form-control">
+                            <p:ajax event="keypress" listener="#{staffHomeBean.viewStaffAjax}" update="suggest_box"></p:ajax>
+                        </h:inputText>
+                    </div>
+                    <h:commandButton value="Search" styleClass="btn btn-success"   type="submit" action="#{staffHomeBean.viewStaffSearch}"/>
+
+                </div>
+
+                <h:panelGroup id="suggest_box">
+                <ui:fragment rendered="#{staffHomeBean.staffsSearchResultAjax.rowAvailable}">
+                <ui:repeat value="#{staffHomeBean.staffsSearchResultAjax}" var="staff">
+                <h:form class="col-md-7"> <h:commandLink value="#{staff.name}" action="#{staffHomeBean.viewStaffAjax}"
+                styleClass=" thumbnail" type="submit">
+                </h:commandLink>  </h:form>
+
+                </ui:repeat>
+
+                </ui:fragment>
+
+                </h:panelGroup>
+            </h:form>
+        </div>
+        <div class="col-md-8">
+            <div class="row" id="staff-home-contents">
+
+                <div>
+                    <h:form>
+                        <h:dataTable value="#{staffHomeBean.staffDataModel}" var="staff"
+                                     styleClass="table table-hover">
+                            <h:column>
+                                <div>
+                                    <img src="/rpgm/ico/staff-small.png" class="img-circle"></img>
+                                </div>
+
+                            </h:column>
+                            <h:column>
+                                <!-- column header -->
+                                <f:facet name="header">Staffs </f:facet>
+                                #{staff.fullName}
+                                <br/>
+                                Staff ID: #{staff.staffid}
+                            </h:column>
+
+                            <h:column>
+                                <h:commandButton value="View" action="#{staffHomeBean.viewStaff}" type="submit"
+                                                 styleClass="btn btn-default"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

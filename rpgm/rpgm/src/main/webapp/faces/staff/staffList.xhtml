@@ -1,0 +1,71 @@
+<ui:composition template="/WEB-INF/templates/staff-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+        >
+
+    <ui:define name="yhead">
+        <title>
+            Staff List
+        </title>
+    </ui:define>
+     <ui:define name="staff-content">
+     	<div class="col-md-8">
+            <!--Breadcrumb to help user "where you are?"-->
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/rpgm/faces/home/myHome.xhtml">Home</a>
+                </li>
+                <li>
+                    <a href="/rpgm/faces/staff/staffHome.xhtml">Staff</a>
+                </li>
+                <li class="active">
+                    StaffList
+                </li>
+            </ol>
+        </div>
+        
+        <div class="col-md-4">
+            <!--Add new student Button-->
+            <a href="/rpgm/faces/staff/staffNew.xhtml">
+                <Button class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add New Staff
+                </Button>
+            </a>
+        </div>
+        
+        <div class="col-md-10">
+            <div class="control-group col-md-10 col-md-offset-1">
+                <h:form>
+                    <h:dataTable value="#{staffListBean.listStaffs}" var="staff"
+                                 styleClass="table table-hover">
+                        <h:column>
+                            <div>
+                                <img src="/rpgm/ico/staff-small.png" class="img-circle"></img>
+                            </div>
+
+                        </h:column>
+
+                        <h:column>
+                            <!-- column header -->
+                            <f:facet name="header">Staff </f:facet>
+                            #{staff.fullName}
+                            <br/>
+                            Emp id: #{staff.staffid}
+                        </h:column>
+
+                        <h:column>
+                            <h:commandButton value="View" action="#{staffListBean.viewStaff}" type="submit"
+                                             styleClass="btn btn-default"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+
+            </div>
+        </div>
+        
+        
+     </ui:define>
+</ui:composition>

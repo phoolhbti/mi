@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14149438324960" configfile="/yschool-ui/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index" comment="from index page to first time ySchool setup page" x="122" y="562" id="pf14154518049140" referenceLink="//@navigationRule.3/@navigationCase.2/@toViewId|" outlinks="pf14154518049151 pf14154518049152" inlinks="pf142043355323172 pf14206100156350" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="setup" x="338" y="360" id="pf14154518049153" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14204333630400 pf14204333630401" inlinks="pf14154518049151" path="/faces/setup/setup.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myHome" x="554" y="562" id="pf14154518049156" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf142043355323172" inlinks="pf14154518049152 pf14204333630400" path="/faces/home/myHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/home/errorUnknown.xhtml" id="pf14204333630402" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf14204333630401" path="/faces/home/errorUnknown.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="studentHome" id="pf14204333630403" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14204333630404 pf14204333630405 pf14206100156350" inlinks="pf14204333630406 pf14204333630407 pf14204333630408" path="/faces/student/studentHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="studentList" id="pf14204333630409" referenceLink="//@navigationRule.6/@navigationCase.2/@toViewId|" outlinks="pf142043336304010" inlinks="pf14204333630404 pf142043336304011" path="/faces/student/studentList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="studentSearch" id="pf142043336304012" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf14204333630408" inlinks="pf14204333630405" path="/faces/student/searchStudent.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="studentNew" id="pf142043336304013" referenceLink="//@navigationRule.4/@navigationCase.1/@toViewId|" outlinks="pf14204333630406 pf142043336304014" inlinks="pf142043336304014" path="/faces/student/studentNew.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="studentView" id="pf142043336304015" referenceLink="//@navigationRule.7/@navigationCase.1/@toViewId|" outlinks="pf142043336304016 pf14204333630407 pf142043336304011" inlinks="pf142043336304010 pf142043336304017 pf142043336304018" path="/faces/student/studentView.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="studentEdit" id="pf142043336304019" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf142043336304017 pf142043336304018" inlinks="pf142043336304016" path="/faces/student/studentEdit.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="staffHome" id="pf142043336304020" referenceLink="//@navigationRule.13/@navigationCase.2/@toViewId|" outlinks="pf142043336304021 pf142043336304022 pf142043336304023" inlinks="pf142043336304024 pf142043336304025 pf142043336304026" path="/faces/staff/staffHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="staffView" id="pf142043336304027" referenceLink="//@navigationRule.14/@navigationCase.1/@toViewId|" outlinks="pf142043336304028 pf142043336304025 pf142043336304026" inlinks="pf142043336304021 pf142043336304029 pf142043336304030 pf142043336304031" path="/faces/staff/staffView.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="staffList" id="pf142043336304032" referenceLink="//@navigationRule.12/@navigationCase.1/@toViewId|" outlinks="pf142043336304029" inlinks="pf142043336304022 pf142043336304033" path="/faces/staff/staffList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="staffSearch" id="pf142043336304034" referenceLink="//@navigationRule.12/@navigationCase.2/@toViewId|" outlinks="pf142043336304035 pf142043336304033 pf142043336304036" inlinks="pf142043336304023 pf142043336304036" path="/faces/staff/searchStaff.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="staffNew" id="pf142043336304037" referenceLink="//@navigationRule.11/@navigationCase.1/@toViewId|" outlinks="pf142043336304024 pf142043336304038" inlinks="pf142043336304038" path="/faces/staff/staffNew.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/staff/staffSearch.xhtml" id="pf142043336304039" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" inlinks="pf142043336304035" path="/faces/staff/staffSearch.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="staffEdit" id="pf142043336304040" referenceLink="//@navigationRule.14/@fromViewId|" outlinks="pf142043336304030 pf142043336304031" inlinks="pf142043336304028" path="/faces/staff/staffEdit.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="examinationNew" id="pf142043336304041" referenceLink="//@navigationRule.15/@navigationCase.3/@toViewId|" outlinks="pf142043336304042 pf142043336304043 pf142043336304044 pf142043336304045" inlinks="pf142043336304043 pf142043336304045" path="/faces/examination/examinationNew.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="examinationHome" id="pf142043336304046" referenceLink="//@navigationRule.16/@fromViewId|" outlinks="pf142043336304047" inlinks="pf142043336304042 pf142043336304044" path="/faces/examination/examinationHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ExaminationEdit" id="pf142043336304048" referenceLink="//@navigationRule.17/@fromViewId|" outlinks="pf142043336304049 pf142043336304050 pf142043336304051 pf142043336304052" inlinks="pf142043336304047 pf142043336304049" path="/faces/examination/examinationView.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/examination/examinationEdit.xhtml" id="pf142043336304053" referenceLink="//@navigationRule.17/@navigationCase.1/@toViewId|" inlinks="pf142043336304050" path="/faces/examination/examinationEdit.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/analytics/analyticsSync.xhtml" id="pf142043336304054" referenceLink="//@navigationRule.19/@fromViewId|" outlinks="pf142043336304055" inlinks="pf142043336304051" path="/faces/analytics/analyticsSync.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/analytics/analyticsExaminationHome.xhtml" id="pf142043336304056" referenceLink="//@navigationRule.17/@navigationCase.3/@toViewId|" inlinks="pf142043336304052" path="/faces/analytics/analyticsExaminationHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/analytics/analyticsStudentRecommenderHome.xhtml" id="pf142043336304057" referenceLink="//@navigationRule.18/@fromViewId|" outlinks="pf142043336304058" path="/faces/analytics/analyticsStudentRecommenderHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/analytics/analyticsStudentRecommenderStream.xhtml" id="pf142043336304059" referenceLink="//@navigationRule.18/@navigationCase.0/@toViewId|" inlinks="pf142043336304058" path="/faces/analytics/analyticsStudentRecommenderStream.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/analytics/analyticsError.xhtml" id="pf142043336304060" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" inlinks="pf142043336304055" path="/faces/analytics/analyticsError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/analytics/analyticsHome.xhtml" id="pf142043336304061" referenceLink="//@navigationRule.20/@fromViewId|" outlinks="pf142043336304062 pf142043336304063" path="/faces/analytics/analyticsHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/analytics/analyticsStudentHome.xhtml" id="pf142043336304064" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" inlinks="pf142043336304062 pf142043336304065" path="/faces/analytics/analyticsStudentHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/analytics/analyticsSearchResults.xhtml" id="pf142043336304066" referenceLink="//@navigationRule.21/@fromViewId|" outlinks="pf142043336304065" inlinks="pf142043336304063" path="/faces/analytics/analyticsSearchResults.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/classroom/classroomHome.xhtml" id="pf142043336304067" referenceLink="//@navigationRule.22/@fromViewId|" outlinks="pf142043336304068 pf142043336304069" path="/faces/classroom/classroomHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/classroom/classroomGradeEdit.xhtml" id="pf142043336304070" referenceLink="//@navigationRule.22/@navigationCase.0/@toViewId|" inlinks="pf142043336304068" path="/faces/classroom/classroomGradeEdit.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/classroom/classroomView.xhtml" id="pf142043336304071" referenceLink="//@navigationRule.22/@navigationCase.1/@toViewId|" inlinks="pf142043336304069" path="/faces/classroom/classroomView.xhtml"/>
+  <links id="pf14154518049151" target="pf14154518049153" source="pf14154518049140" outcome="setup" redirect="true"/>
+  <links id="pf14154518049152" target="pf14154518049156" source="pf14154518049140" outcome="login" redirect="true"/>
+  <links id="pf14204333630400" target="pf14154518049156" source="pf14154518049153" outcome="success" redirect="true"/>
+  <links id="pf14204333630401" target="pf14204333630402" source="pf14154518049153" outcome="failure" redirect="true"/>
+  <links id="pf14204333630404" target="pf14204333630409" source="pf14204333630403" outcome="ViewStudentList" redirect="true"/>
+  <links id="pf14204333630405" target="pf142043336304012" source="pf14204333630403" outcome="viewStudentAjax" redirect="true"/>
+  <links id="pf14204333630406" target="pf14204333630403" source="pf142043336304013" outcome="AddStudentSuccess" redirect="true"/>
+  <links id="pf142043336304014" target="pf142043336304013" source="pf142043336304013" outcome="AddStudentFailed" redirect="true"/>
+  <links id="pf142043336304010" target="pf142043336304015" source="pf14204333630409" outcome="viewStudent" redirect="true"/>
+  <links id="pf142043336304016" target="pf142043336304019" source="pf142043336304015" outcome="EditStudent" redirect="true"/>
+  <links id="pf14204333630407" target="pf14204333630403" source="pf142043336304015" outcome="StudentHome" redirect="true"/>
+  <links id="pf142043336304011" target="pf14204333630409" source="pf142043336304015" outcome="backStudentList" redirect="true"/>
+  <links id="pf142043336304017" target="pf142043336304015" source="pf142043336304019" outcome="editStudent" redirect="true"/>
+  <links id="pf142043336304018" target="pf142043336304015" source="pf142043336304019" outcome="backToView" redirect="true"/>
+  <links id="pf14204333630408" target="pf14204333630403" source="pf142043336304012" outcome="backStudentHome" redirect="true"/>
+  <links id="pf142043336304021" target="pf142043336304027" source="pf142043336304020" outcome="viewStaff" redirect="true"/>
+  <links id="pf142043336304022" target="pf142043336304032" source="pf142043336304020" outcome="ViewStaffList" redirect="true"/>
+  <links id="pf142043336304023" target="pf142043336304034" source="pf142043336304020" outcome="viewStaffAjax" redirect="true"/>
+  <links id="pf142043336304029" target="pf142043336304027" source="pf142043336304032" outcome="viewStaff" redirect="true"/>
+  <links id="pf142043336304024" target="pf142043336304020" source="pf142043336304037" outcome="AddStaffSuccess" redirect="true"/>
+  <links id="pf142043336304038" target="pf142043336304037" source="pf142043336304037" outcome="AddStaffFailed" redirect="true"/>
+  <links id="pf142043336304035" target="pf142043336304039" source="pf142043336304034" outcome="viewStaffAjax" redirect="true"/>
+  <links id="pf142043336304033" target="pf142043336304032" source="pf142043336304034" outcome="ViewStaffList" redirect="true"/>
+  <links id="pf142043336304036" target="pf142043336304034" source="pf142043336304034" outcome="viewStaffAjax" redirect="true"/>
+  <links id="pf142043336304028" target="pf142043336304040" source="pf142043336304027" outcome="EditStaff" redirect="true"/>
+  <links id="pf142043336304025" target="pf142043336304020" source="pf142043336304027" outcome="BackToHomeStaff" redirect="true"/>
+  <links id="pf142043336304026" target="pf142043336304020" source="pf142043336304027" outcome="staffHome" redirect="true"/>
+  <links id="pf142043336304030" target="pf142043336304027" source="pf142043336304040" outcome="UpdateStaff" redirect="true"/>
+  <links id="pf142043336304031" target="pf142043336304027" source="pf142043336304040" outcome="BackToViewStaff" redirect="true"/>
+  <links id="pf142043336304042" target="pf142043336304046" source="pf142043336304041" outcome="success" redirect="true"/>
+  <links id="pf142043336304043" target="pf142043336304041" source="pf142043336304041" outcome="failure" redirect="true"/>
+  <links id="pf142043336304044" target="pf142043336304046" source="pf142043336304041" outcome="NewTermExamSuccess" redirect="true"/>
+  <links id="pf142043336304045" target="pf142043336304041" source="pf142043336304041" outcome="NewTermExamFailure" redirect="true"/>
+  <links id="pf142043336304047" target="pf142043336304048" source="pf142043336304046" outcome="examinationView" redirect="true"/>
+  <links id="pf142043336304049" target="pf142043336304048" source="pf142043336304048" outcome="ViewExam" redirect="true"/>
+  <links id="pf142043336304050" target="pf142043336304053" source="pf142043336304048" outcome="EditExam" redirect="true"/>
+  <links id="pf142043336304051" target="pf142043336304054" source="pf142043336304048" outcome="AnalyticsSync" redirect="true"/>
+  <links id="pf142043336304052" target="pf142043336304056" source="pf142043336304048" outcome="CheckStandard" redirect="true"/>
+  <links id="pf142043336304058" target="pf142043336304059" source="pf142043336304057" outcome="StreamProfiles" redirect="true"/>
+  <links id="pf142043336304055" target="pf142043336304060" source="pf142043336304054" outcome="AnalyticsError" redirect="true"/>
+  <links id="pf142043336304062" target="pf142043336304064" source="pf142043336304061" outcome="viewAnalyticsStudent" redirect="true"/>
+  <links id="pf142043336304063" target="pf142043336304066" source="pf142043336304061" outcome="viewAnalyticsSearchResults" redirect="true"/>
+  <links id="pf142043336304065" target="pf142043336304064" source="pf142043336304066" outcome="viewAnalyticsStudent" redirect="true"/>
+  <links id="pf142043336304068" target="pf142043336304070" source="pf142043336304067" outcome="editGrade" redirect="true"/>
+  <links id="pf142043336304069" target="pf142043336304071" source="pf142043336304067" outcome="viewClassroom" redirect="true"/>
+  <links id="pf142043355323172" target="pf14154518049140" source="pf14154518049156" outcome="logout"/>
+  <links id="pf14206100156350" target="pf14154518049140" source="pf14204333630403" outcome="logout"/>
+</pageflow:Pageflow>

@@ -1,0 +1,84 @@
+.thumbnail, a.thumbnail,{
+    background-color: rgb(249, 242, 253);
+}
+
+.thumbnail:hover, a.thumbnail:hover, .panel-heading:hover{
+    background-color: rgb(230, 204, 244);
+    border-color: rgb(230, 204, 244);
+}
+
+.panel-heading{
+    text-decoration: none;
+    color: #000000;
+}
+
+.thumbnail-no-hover:hover {
+    background-color: rgb(249, 242, 253);
+}
+
+.thumbnail-sidebar{
+    border: 0px;
+    border-radius: 0px;
+}
+
+.thumbnail-sidebar:hover{
+    background-color: rgb(250, 230, 244);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.ynavbar-dark {
+    background-color: rgb(70, 20, 100);
+}
+
+.ynavbar-dark .navbar-header a,
+.ynavbar-dark .navbar-collapse .nav .dropdown .navbar-topmenu,
+.ynavbar-dark .navbar-collapse .nav .dropdown .navbar-topmenu:active{
+    color: rgb(235, 215, 245);
+    background-color: rgb(70, 20, 100);
+}
+
+.ynavbar-dark .navbar-header a:hover, .ynavbar-dark .navbar-collapse .nav .dropdown .navbar-topmenu:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(80, 20, 120);
+}
+
+/*.ynavbar-dark .dropdown a:focus {*/
+    /*color: rgb(255, 255, 255);*/
+    /*background-color: rgb(80, 20, 120);*/
+/*}*/
+
+
+#navbar-dark-top-search-addon {
+    border: 0px none;
+    border-radius: 0px;
+    box-shadow: -30px 0px 60px rgb(80, 20, 110) inset;
+    background: rgb(80, 20, 110);
+    color: rgb(235, 215, 245);
+}
+
+#customPojo_input {
+    width: 55%;
+    /*color: rgb(235, 215, 245);*/
+    height: 34px;
+    float:right;
+    border: 0px none;
+    border-radius: 0px;
+    box-shadow: -10px 0px 50px rgb(80, 20, 110) inset;
+    /*background-color: rgb(80, 20, 110);*/
+}
+
+#customPojo_input:focus {
+    width: 100%;
+    color: black;
+    border: 0px none;
+    border-radius: 0px;
+    box-shadow: 0px 5px 10px rgb(230, 180, 255) inset;
+    background-color: rgb(255, 255, 240);
+}
+
+#navbar-dark-top-search-li {
+    margin-top: 8px;
+}

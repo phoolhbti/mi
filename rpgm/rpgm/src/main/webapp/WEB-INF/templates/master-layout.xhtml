@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: JayKrish
+  Date: 26/8/12
+  Time: 8:54 AM
+-->
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="arima"/>
+
+    <link href="/rpgm/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/rpgm/css/rpgm.css" rel="stylesheet"/>
+
+    <link rel="shortcut icon" href="/rpgm/img/arimalogo-favicon.png"/>
+
+    <!--load before document due to dependencies-->
+    <script src="/rpgm/js/rpgm/rpgm.js" type="text/javascript"></script>
+
+    <ui:insert name="yhead">
+        <title>rpgm</title>
+    </ui:insert>
+
+
+</h:head>
+
+<h:body style="background-color: rgb(255,250,250);">
+
+    <div id="dic_bubble" class="selection_bubble fontSize13 noSelect"
+         style="z-index:9999; border: 1px solid #4AAEDE;fetching=false"></div>
+
+    <!--Power server dialog-->
+    <h:form>
+        <p:growl id="msg" showDetail="true" sticky="true"/>
+
+        <!-- If idle 1 Minutes, run 'idleDialog' -->
+        <!--TODO: configurable through settings-->
+        <p:idleMonitor timeout="60000" onidle="idleDialog.show();"
+                       onactive="idleDialog.hide()"/>
+
+        <p:dialog id="power-saving-dialog"
+                  showHeader="false"
+                  showEffect="size" hideEffect="puff"
+                  style="border:0px;
+                  background: rgb(20, 0, 30);
+                  margin-top: 50px;"
+                  widgetVar="idleDialog" modal="true">
+
+            <p style="width:1366px; height:1024px;display: table-cell;
+                                                                vertical-align: middle;text-align: center;
+                                                                color:rgb(200,150,200);font-size: 20px">
+                <marquee behavior="alternate" scrollamount=".3">
+                    . .. Power Saving Mode .. . <br/>
+                </marquee>
+                <marquee behavior="alternate" scrollamount=".4">
+                    Dude! Are you there ?
+                </marquee>
+            </p>
+            <script type="text/javascript">
+                function setMaxsize() {
+                    $("#power-saving-dialog").height(window.height);
+                    $("#power-saving-dialog").width(window.width);
+                }
+            </script>
+        </p:dialog>
+        <h:commandButton id="hdnBtn" actionListener="#{SearchBean.search}" style="display: none;"/>
+    </h:form>
+
+    <div id="ybody-header">
+        <ui:insert name="ybody-hader">
+            <!-- Fixed navbar-->
+
+            <div class="navbar navbar-default navbar-fixed-top ynavbar-dark" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/rpgm/faces/home/myHome.xhtml">
+                            RPGM
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="navbar-collapse collapse" style="height: auto;">
+                        <!--<ul class="nav navbar-nav"></ul>-->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li id="navbar-dark-top-search-li">
+                                <form action="">
+                                    <div class="input-group">
+                                        <p:autoComplete size="40" value="#{searchBean.selectedResult}"
+                                                        id="customPojo" completeMethod="#{searchBean.completeSearch}"
+                                                        var="p" itemLabel="#{p.name}" itemValue="#{p}"
+                                                        converter="#{searchConverter}" forceSelection="true"
+                                                        placeholder=" Search anything in rpgm  and hit enter...">
+
+                                            <p:column style="background-color:rgb(249, 242, 253);border-width: 0px;">
+                                                <div>
+                                                    <span class="glyphicon glyphicon-user"></span>
+                                                </div>
+                                                <div class="col-sm-8" style="color: black;">
+                                                    #{p.name}
+                                                </div>
+                                                <div class="pull-right col-sm-4"
+                                                     style="color:black;font-size:90%;text-align: right">
+                                                    #{p.type}
+                                                </div>
+                                            </p:column>
+                                        </p:autoComplete>
+                                  <span class="input-group-addon glyphicon glyphicon-search"
+                                        id="navbar-dark-top-search-addon"></span>
+                                    </div>
+                                </form>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle navbar-topmenu"
+                                   data-toggle="dropdown">Welcome to RPGM
+                                    <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+								<h:panelGroup rendered="#{not empty username}">
+								<h:form>
+                                    <li><a href="#">Welcome, #{username}</a></li>
+									<li class="divider"></li>									
+                                    <li><a href="#">Settings</a></li>
+									<li class="divider"></li>
+                                    <li><a href="#">Updates</a></li>
+									<li class="divider"></li>
+                                    <li><h:commandLink action="#{loginBean.logout}" value="Logout"  ajax="false"></h:commandLink></li>
+									</h:form>
+									</h:panelGroup>
+                                   <!-- <li class="divider"></li>
+                                    <li><a href="#">Help</a></li> -->
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="navbar-topmenu">Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </ui:insert>
+    </div>
+
+    <div id="ybody-content" style="padding-top: 60px;">
+        <ui:insert name="ybody-content">
+            Default body content from master template.
+        </ui:insert>
+    </div>
+
+    <div id="ybody-footer">
+        <ui:insert name="ybody-footer">
+            <p><![CDATA[&copy;]> RPGM 2014</![CDATA]]></p>
+        </ui:insert>
+    </div>
+
+    <!--================================================== -->
+    <!--  javascripts Placed at the end of the document so the pages load faster -->
+
+    <!--ussing primefaces library's jquery to avoid conflicts with bootstap-->
+    <!--<h:outputScript library="primefaces" name="jquery/jquery.js"/>-->
+    <script src="/rpgm/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--<script src="/rpgm/js/jquery-1.11.0.min.js" type="text/javascript"></script>-->
+    <script src="/rpgm/js/typeahead.js" type="text/javascript"></script>
+
+</h:body>
+</html>

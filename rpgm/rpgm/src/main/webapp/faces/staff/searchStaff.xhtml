@@ -1,0 +1,73 @@
+<ui:composition template="/WEB-INF/templates/staff-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="yhead">
+        <title>
+            Searching #{staffSearchBean.staff.fullName}
+        </title>
+    </ui:define>
+
+    <ui:define name="student-content">
+
+        <div class="col-md-8">
+            <!--Breadcrumb to help user "where you are?"-->
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/rpgm/faces/home/myHome.xhtml">Home</a>
+                </li>
+                <li>
+                    <a href="/rpgm/faces/student/staffHome.xhtml">Staff</a>
+                </li>
+                <li>
+                    <a href="/rpgm/faces/student/searchStaff.xhtml">Staff Search</a>
+                </li>
+                <li class="active">
+                    Search: #{staffSearchBean.staff.fullName}
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="col-md-4">
+            <!--Add new student Button-->
+            <a href="/rpgm/faces/student/staffNew.xhtml">
+                <Button class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add New Staff
+                </Button>
+            </a>
+        </div>
+        <!-- end student New -->
+
+        <div class="col-md-10">
+            <div class="row" id="student-home-contents">
+
+                <div class="col-md-3">
+                    <div>
+                        <img src="/rpgm/ico/student.png" class="img-circle"></img>
+                    </div>
+                </div>
+
+                
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-lg-offset-4">
+
+                                <h:form>
+                                    <h:commandButton value="Back" action="#{staffSearchBean.backToHome}" type="submit"
+                                                     styleClass="btn btn-default">
+                                    </h:commandButton>
+                                </h:form>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

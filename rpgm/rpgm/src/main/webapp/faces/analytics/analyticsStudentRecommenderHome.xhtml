@@ -1,0 +1,176 @@
+<ui:composition template="/WEB-INF/templates/analytics-layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+        >
+
+    <ui:define name="yhead">
+        <title>rpgm: Student Analytics </title>
+
+        <div>
+            <f:event listener="#{analyticsStudentRecommenderHomeBean.preloadStudent}" type="preRenderView"/>
+        </div>
+
+    </ui:define>
+
+    <ui:define name="student-content">
+
+        <div class="span7">
+
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/rpgm/faces/home/myHome.xhtml">Home</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/rpgm/faces/analytics/analyticsHome.xhtml">Analytics</a><span class="divider">></span>
+                </li>
+
+                <li>
+                    <a href="#">#{analyticsStudentRecommenderHomeBean.student.fullName}</a> <span
+                        class="divider">></span><!-- need to get the Student ID -->
+                </li>
+
+                <li>
+                    <a href="/rpgm/faces/analytics/analyticsStudentRecommenderHome.xhtml">Recommender Home</a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div class="span2">
+            <!--Examination search bar with filter-->
+            <form class="navbar-search pull-left">
+                <input type="text" class="search-query" placeholder="Search"> </input>
+            </form>
+        </div>
+
+
+        <div class="span11">
+
+            <div class="span8">
+                <h:panelGrid columns="1">
+                    <p:pieChart id="matchingProfileSubjects"
+                                seriesColors="00CCFF, FFCC33,33CC66, FF9966"
+                                value="#{analyticsStudentRecommenderHomeBean.pieModelSubject}"
+                                legendPosition="e" showDataLabels="true"
+                                title="Matching Profiles: The Streams" style="width:600px;height:400px"
+                                sliceMargin="5"
+                                diameter="300"/>
+                </h:panelGrid>
+            </div>
+
+
+            <div class="span4">
+
+                <div class="accordion" id="subjectDescription">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#subjectDescription"
+                               href="#subDescription">
+                                A/L Stream Recommender: Stream Selection Assistance
+                            </a>
+                        </div>
+                        <div id="subDescription" class="accordion-body collapse in">
+                            <div class="accordion-inner">
+                                A/L Stream Recommender assists in the decision making process of a new student about to
+                                enter the advanced level. This Pie Chart illustrates the choice of streams done by the
+                                matching profiles in the past. The success and failure are decided according to the
+                                UGC handbook and the district is set to Jaffna. The profiles can be viewed
+                                by clicking the 'View ' button,above. Please note that some profiles
+                                may not be revealed according the enforced policies.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="span11">
+            <div class="span3">
+
+                <p:pieChart seriesColors="CC0000, 32CD72" id="arts"
+                            value="#{analyticsStudentRecommenderHomeBean.pieModelArts}"
+                            legendPosition="w" showDataLabels="true"
+                            title="Arts" style="width:250px;height:200px"
+                            sliceMargin="5"
+                            diameter="100"/>
+            </div>
+
+
+            <div class="span3">
+
+                <p:pieChart seriesColors="CC0000,32CD72" id="commerce"
+                            value="#{analyticsStudentRecommenderHomeBean.pieModelCom}"
+                            legendPosition="w" showDataLabels="true"
+                            title="Commerce" style="width:250px;height:200px"
+                            sliceMargin="5"
+                            diameter="100"/>
+            </div>
+
+
+            <div class="span3">
+
+                <p:pieChart seriesColors="CC0000,32CD72" id="maths"
+                            value="#{analyticsStudentRecommenderHomeBean.pieModelMaths}"
+                            legendPosition="w" showDataLabels="true"
+                            title="Physical Science" style="width:250px;height:200px"
+                            sliceMargin="5"
+                            diameter="100"/>
+            </div>
+
+
+            <div class="span3">
+
+                <p:pieChart seriesColors="CC0000,32CD72" id="science"
+                            value="#{analyticsStudentRecommenderHomeBean.pieModelBio}"
+                            legendPosition="w" showDataLabels="true"
+                            title="Biological Science" style="width:250px;height:200px"
+                            sliceMargin="5"
+                            diameter="100"/>
+            </div>
+
+            <h:form>
+
+                <div class="span2">
+                    <h:commandButton type="submit" value="Profiles"
+                                     action="#{analyticsStudentRecommenderHomeBean.navigateToStreamProfiles_Arts}"
+                                     class="btn btn-info btn-large"/>
+                </div>
+
+                <div class="span2 offset1">
+                    <h:commandButton type="submit" value="Profiles"
+                                     action="#{analyticsStudentRecommenderHomeBean.navigateToStreamProfiles_Commerce}"
+                                     class="btn btn-info btn-large"/>
+                </div>
+
+
+                <div class="span2 offset1">
+                    <h:commandButton type="submit" value="Profiles"
+                                     action="#{analyticsStudentRecommenderHomeBean.navigateToStreamProfiles_Maths}"
+                                     class="btn btn-info btn-large"/>
+                </div>
+
+
+                <div class="span2 offset1">
+                    <h:commandButton type="submit" value="Profiles"
+                                     action="#{analyticsStudentRecommenderHomeBean.navigateToStreamProfiles_Science}"
+                                     class="btn btn-info btn-large"/>
+                </div>
+
+            </h:form>
+
+        </div>
+
+
+    </ui:define>
+
+</ui:composition>
+
+
