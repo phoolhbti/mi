@@ -15,8 +15,8 @@ import java.util.Date;
 public class StudentServiceTestUtils {
 
     public static Student addNewStudent(StudentService studentService, String addmision_No, String name, String fullname, String name_wt_initial,
-                                        Date dob, String gender, String address) {
-        Student student = studentService.addNewStudent(addmision_No, name, fullname, name_wt_initial, dob, gender, address);
+                                        Date dob, String gender, String address,byte[] file) {
+        Student student = studentService.addNewStudent(addmision_No, name, fullname, name_wt_initial, dob, gender, address,file);
         return student;
     }
 
