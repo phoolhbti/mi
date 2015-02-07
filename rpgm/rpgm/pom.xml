@@ -11,8 +11,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.yarlithub.yschool</groupId>
-    <artifactId>yschool-ui</artifactId>
+    <groupId>com.rpgm.online</groupId>
+    <artifactId>rpgm-ui</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -28,7 +28,7 @@
     </properties>
 
     <build>
-        <finalName>yschool</finalName>
+        <finalName>rpgm</finalName>
         <plugins>
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
@@ -37,7 +37,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-                    	<contextPath>/yschool</contextPath>
+                    	<contextPath>/rpgm</contextPath>
                     </webApp>
                 </configuration>
                 
