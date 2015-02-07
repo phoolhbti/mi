@@ -6,8 +6,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.yarlithub.yschool</groupId>
-        <artifactId>yschool</artifactId>
+        <groupId>com.rpgm.online</groupId>
+		<artifactId>rpgm</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -206,47 +206,47 @@
 
         <!--Generic ySchool backend APIs-->
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>init</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>staff</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>student</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>examination</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>classroom</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>analytics</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>commons</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>module</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yarlithub.yschool</groupId>
+            <groupId>com.rpgm.online</groupId>
             <artifactId>subject</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
