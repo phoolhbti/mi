@@ -5,3 +5,4 @@ http://anshuchoudhury.wordpress.com/2012/04/30/upload-and-retrive-images-from-da
 -Dmaven.test.skip=true
 
 mvn clean -Dmaven.test.skip=true jetty:run-war
+mvn clean install 
