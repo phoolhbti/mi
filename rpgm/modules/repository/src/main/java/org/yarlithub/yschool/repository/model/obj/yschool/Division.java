@@ -29,7 +29,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IDivision;
  */
 
 @Entity
-@Table(name = "division", schema = "yschool")
+@Table(name = "division", schema = "rpgm")
 public class Division implements Cloneable, Serializable, IPojoGenEntity, IDivision {
 
 	/** Serial Version UID. */

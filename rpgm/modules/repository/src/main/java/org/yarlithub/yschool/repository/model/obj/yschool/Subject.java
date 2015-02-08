@@ -30,7 +30,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.ISubject;
  */
 
 @Entity
-@Table(name = "subject", schema = "yschool")
+@Table(name = "subject", schema = "rpgm")
 public class Subject implements Cloneable, Serializable, IPojoGenEntity, ISubject {
 
 	/** Serial Version UID. */

@@ -28,7 +28,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IExamSync;
  */
 
 @Entity
-@Table(name = "exam_sync", schema = "yschool")
+@Table(name = "exam_sync", schema = "rpgm")
 public class ExamSync implements Cloneable, Serializable, IPojoGenEntity, IExamSync {
 
 	/** Serial Version UID. */

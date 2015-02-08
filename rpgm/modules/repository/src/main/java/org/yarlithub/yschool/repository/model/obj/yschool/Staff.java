@@ -40,7 +40,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IStaff;
  */
 
 @Entity
-@Table(name = "staff", schema = "yschool")
+@Table(name = "staff", schema = "rpgm")
 public class Staff implements Cloneable, Serializable, IPojoGenEntity, IStaff {
 
 	/** Serial Version UID. */

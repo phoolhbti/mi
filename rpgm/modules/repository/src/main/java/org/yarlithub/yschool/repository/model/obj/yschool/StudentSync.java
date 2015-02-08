@@ -28,7 +28,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IStudentSync;
  */
 
 @Entity
-@Table(name = "student_sync", schema = "yschool")
+@Table(name = "student_sync", schema = "rpgm")
 public class StudentSync implements Cloneable, Serializable, IPojoGenEntity, IStudentSync {
 
 	/** Serial Version UID. */

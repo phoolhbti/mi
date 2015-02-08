@@ -30,7 +30,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IGrade;
  */
 
 @Entity
-@Table(name = "grade", schema = "yschool")
+@Table(name = "grade", schema = "rpgm")
 public class Grade implements Cloneable, Serializable, IPojoGenEntity, IGrade {
 
 	/** Serial Version UID. */

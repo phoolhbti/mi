@@ -31,7 +31,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.ISection;
  */
 
 @Entity
-@Table(name = "section", schema = "yschool")
+@Table(name = "section", schema = "rpgm")
 public class Section implements Cloneable, Serializable, IPojoGenEntity, ISection {
 
 	/** Serial Version UID. */

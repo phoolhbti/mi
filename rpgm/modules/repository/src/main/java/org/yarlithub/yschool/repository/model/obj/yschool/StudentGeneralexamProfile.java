@@ -28,7 +28,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IStudentGenerale
  */
 
 @Entity
-@Table(name = "student_generalexam_profile", schema = "yschool")
+@Table(name = "student_generalexam_profile", schema = "rpgm")
 public class StudentGeneralexamProfile implements Cloneable, Serializable, IPojoGenEntity, IStudentGeneralexamProfile {
 
 	/** Serial Version UID. */

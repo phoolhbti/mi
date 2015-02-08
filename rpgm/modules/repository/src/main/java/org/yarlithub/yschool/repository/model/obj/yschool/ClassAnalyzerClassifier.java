@@ -23,7 +23,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IClassAnalyzerCl
  */
 
 @Entity
-@Table(name = "class_analyzer_classifier", schema = "yschool")
+@Table(name = "class_analyzer_classifier", schema = "rpgm")
 public class ClassAnalyzerClassifier implements Cloneable, Serializable, IPojoGenEntity, IClassAnalyzerClassifier {
 
 	/** Serial Version UID. */

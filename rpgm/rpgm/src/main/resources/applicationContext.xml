@@ -35,7 +35,7 @@
         <property name="ignoreResourceNotFound"><value>true</value></property>
         <property name="location">
             <!--  You may use file:d:/temp/db.properties etc here -->
-            <value>classpath:yschool.db.properties</value>
+            <value>classpath:rpgm.db.properties</value>
         </property>
     </bean>
 
@@ -43,7 +43,7 @@
     <bean id="mainDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost/yschool" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost/rpgm" />
         <property name="user" value="root"/>
         <property name="password" value="root"/>
         <property name="idleConnectionTestPeriod" value="60"/>

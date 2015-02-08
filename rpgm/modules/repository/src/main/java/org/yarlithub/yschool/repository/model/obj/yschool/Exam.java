@@ -34,7 +34,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IExam;
  */
 
 @Entity
-@Table(name = "exam", schema = "yschool")
+@Table(name = "exam", schema = "rpgm")
 public class Exam implements Cloneable, Serializable, IPojoGenEntity, IExam {
 
 	/** Serial Version UID. */

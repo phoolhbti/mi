@@ -32,7 +32,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IModule;
  */
 
 @Entity
-@Table(name = "module", schema = "yschool")
+@Table(name = "module", schema = "rpgm")
 public class Module implements Cloneable, Serializable, IPojoGenEntity, IModule {
 
 	/** Serial Version UID. */

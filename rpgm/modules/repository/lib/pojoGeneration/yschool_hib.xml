@@ -3,19 +3,19 @@
 
  	<dbType>MYSQL</dbType>
 	<driver>com.mysql.jdbc.Driver</driver>
-    <jdbcConnectionString>jdbc:mysql://127.0.0.1/yschool</jdbcConnectionString>
+    <jdbcConnectionString>jdbc:mysql://127.0.0.1/rpgm</jdbcConnectionString>
 	<databaseIP>localhost</databaseIP>
-    <databaseSchema>yschool</databaseSchema>
+    <databaseSchema>rpgm</databaseSchema>
 	<databaseUsername>root</databaseUsername>
 	<databasePassword>root</databasePassword>
     <!--add YOUR_PATH and remove comment bellow-->
     <sourceTarget>D:\Projects\POJOJEN</sourceTarget>
 	<projectName>repository</projectName>
-	<topLevel>org.yarlithub.yschool</topLevel>
+	<topLevel>com.rpgm.online</topLevel>
 	<libPath>libs</libPath>
 	<schemaStrategy>PARTIAL</schemaStrategy>
 
-<maven enabled="true" artifactId="yschool" groupId="org.yarlithub" version="1.0-SNAPSHOT" name="repository" packaging="jar">
+<maven enabled="true" artifactId="rpgm" groupId="com.rpgm" version="1.0-SNAPSHOT" name="repository" packaging="jar">
 	
    <dependencies>
 

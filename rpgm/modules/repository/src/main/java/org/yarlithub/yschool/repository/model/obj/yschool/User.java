@@ -28,7 +28,7 @@ import org.yarlithub.yschool.repository.model.obj.yschool.iface.IUser;
  */
 
 @Entity
-@Table(name = "user", schema = "yschool")
+@Table(name = "user", schema = "rpgm")
 public class User implements Cloneable, Serializable, IPojoGenEntity, IUser {
 
 	/** Serial Version UID. */
