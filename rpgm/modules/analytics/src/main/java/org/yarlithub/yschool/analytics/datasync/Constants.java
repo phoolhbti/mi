@@ -19,7 +19,7 @@ public class Constants {
     /**
      * CLASS Database connection strings.
      */
-    public static final String CLASS_DB_NAME = "jdbc:mysql://localhost:3306/class";
+    public static final String CLASS_DB_NAME = "jdbc:mysql://localhost:3306/rpgm";
     public static final String CLASS_DB_USERNAME = "root";
     public static final String CLASS_DB_PASSWORD = "";
     public static final String INSERT_STUDENT = "INSERT INTO student (school_no, student_school_id, gender, religion, language, father, mother, siblings) VALUES (?,?,?,?,?,?,?,?)";

@@ -29,7 +29,7 @@ public class JasperReport {
     public void printJasperReport(ServletOutputStream servletOutputStream) throws IOException, JRException {                 //ServletOutputStream servletOutputStream
 
 
-      jrxmlPath = "/home/kana/ySchool/modules/analytics/src/main/java/org/yarlithub/yschool/analytics/reporting/jrxmlFiles/CLASS_report_student_progress.jrxml";
+      jrxmlPath = "D:/Projects/GITRepositery/RPGM/mi15/rpgm/modules/analytics/src/main/java/org/yarlithub/yschool/analytics/reporting/jrxmlFiles/CLASS_report_student_progress.jrxml";
 
         //  jrxmlPath = "/home/kana/ySchool/modules/analytics/src/main/java/org/yarlithub/yschool/analytics/reporting/jrxmlFiles/Copy.jrxml";
 

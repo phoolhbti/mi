@@ -18,6 +18,13 @@ Please don't edit it manually as it cause tracing page navigation more complex.-
 -->
 
     <!--index-->
+	<navigation-rule>
+	<from-view-id>*</from-view-id>
+	<navigation-case>
+            <from-outcome>help</from-outcome>
+            <to-view-id>/faces/about/aboutus.xhtml</to-view-id>            
+        </navigation-case>
+	</navigation-rule>
     <navigation-rule>
         <description>from index page to first time rpgm setup page</description>
         <display-name>index</display-name>
@@ -31,7 +38,8 @@ Please don't edit it manually as it cause tracing page navigation more complex.-
             <from-outcome>login</from-outcome>
             <to-view-id>/faces/home/myHome.xhtml</to-view-id>
             <redirect/>
-        </navigation-case>        
+        </navigation-case>  
+		
     </navigation-rule>
 	<navigation-rule>
 		<display-name>myHome</display-name>
@@ -40,6 +48,7 @@ Please don't edit it manually as it cause tracing page navigation more complex.-
 			<from-outcome>logout</from-outcome>
 			<to-view-id>/index.xhtml</to-view-id>
 		</navigation-case>
+		
 	</navigation-rule>
     <!--setup-->
     <navigation-rule>
@@ -384,7 +393,7 @@ Please don't edit it manually as it cause tracing page navigation more complex.-
             <from-outcome>viewClassroom</from-outcome>
             <to-view-id>/faces/classroom/classroomView.xhtml</to-view-id>
             <redirect/>
-        </navigation-case>
+        </navigation-case>		
     </navigation-rule>
 
 </faces-config>

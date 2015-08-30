@@ -50,7 +50,7 @@ public class Classroom implements Cloneable, Serializable, IPojoGenEntity, IClas
 	
 
 	/** Field mapping. */
-	private Set<ClassroomHasStaffHasRole> classroomHasStaffHasRoles = new HashSet<ClassroomHasStaffHasRole>();
+	private Set<ClassroomHasStaffHasRole> classroomHasStaffHasRole = new HashSet<ClassroomHasStaffHasRole>();
 
 	/** Field mapping. */
 	private Set<ClassroomModule> classroomModules = new HashSet<ClassroomModule>();
@@ -122,18 +122,18 @@ public class Classroom implements Cloneable, Serializable, IPojoGenEntity, IClas
  	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE})
 	@Basic( optional = false )
 	@Column( nullable = false  )
-	public Set<ClassroomHasStaffHasRole> getClassroomHasStaffHasRoles() {
-		return this.classroomHasStaffHasRoles;
+	public Set<ClassroomHasStaffHasRole> getClassroomHasStaffHasRole() {
+		return this.classroomHasStaffHasRole;
 		
 	}
 	
 	/**
-	 * Adds a bi-directional link of type ClassroomHasStaffHasRole to the classroomHasStaffHasRoles set.
+	 * Adds a bi-directional link of type ClassroomHasStaffHasRole to the classroomHasStaffHasRole set.
 	 * @param classroomHasStaffHasRole item to add
 	 */
 	public void addClassroomHasStaffHasRole(ClassroomHasStaffHasRole classroomHasStaffHasRole) {
 		classroomHasStaffHasRole.getId().setClassroomIdclassroom(this);
-		this.classroomHasStaffHasRoles.add(classroomHasStaffHasRole);
+		this.classroomHasStaffHasRole.add(classroomHasStaffHasRole);
 	}
 
   
@@ -141,8 +141,8 @@ public class Classroom implements Cloneable, Serializable, IPojoGenEntity, IClas
      * Set the value related to the column: classroomHasStaffHasRole.
 	 * @param classroomHasStaffHasRole the classroomHasStaffHasRole value you wish to set
 	 */
-	public void setClassroomHasStaffHasRoles(final Set<ClassroomHasStaffHasRole> classroomHasStaffHasRole) {
-		this.classroomHasStaffHasRoles = classroomHasStaffHasRole;
+	public void setClassroomHasStaffHasRole(final Set<ClassroomHasStaffHasRole> classroomHasStaffHasRole) {
+		this.classroomHasStaffHasRole = classroomHasStaffHasRole;
 	}
 
     /**
@@ -360,8 +360,8 @@ public class Classroom implements Cloneable, Serializable, IPojoGenEntity, IClas
 		
         final Classroom copy = (Classroom)super.clone();
 
-		if (this.getClassroomHasStaffHasRoles() != null) {
-			copy.getClassroomHasStaffHasRoles().addAll(this.getClassroomHasStaffHasRoles());
+		if (this.getClassroomHasStaffHasRole() != null) {
+			copy.getClassroomHasStaffHasRole().addAll(this.getClassroomHasStaffHasRole());
 		}
 		if (this.getClassroomModules() != null) {
 			copy.getClassroomModules().addAll(this.getClassroomModules());
